@@ -1,0 +1,25 @@
+.neumorphic {
+    background: #2E2E2E;
+    border-radius: 15px;
+    box-shadow: 4px 4px 16px #1A1A1A, -2px -2px 16px #424242;
+    min-width: 100px;
+    min-height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: box-shadow 0.1s ease, transform 0.1s ease;
+    .text {
+        font-size: 2rem;
+    }
+}
+
+.neumorphic:hover {
+    box-shadow: 4px 4px 4px #1A1A1A, -2px -2px 2px #424242;
+}
+
+.neumorphic:active {
+    box-shadow: inset 4px 4px 8px #1A1A1A, inset -4px -4px 8px #424242;
+    .text {
+        opacity: 0.5;
+    }
+}
