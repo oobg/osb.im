@@ -7,7 +7,7 @@ interface NewmorphicLinkProps {
 	href: string,
 }
 
-export default function uiLink({
+export default function ALink({
 	children, className = "", href,
 }: Readonly<NewmorphicLinkProps>) {
 	const combinedClassName = `neumorphic ${className}`.trim();

@@ -6,7 +6,7 @@ interface NewmorphicButtonProps {
 	onClick?: () => void;
 }
 
-export default function uiButton({
+export default function Button({
 	children, className = "", onClick,
 }: Readonly<NewmorphicButtonProps>) {
 	const combinedClassName = `neumorphic ${className}`.trim();
