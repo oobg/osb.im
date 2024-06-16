@@ -1,16 +1,16 @@
 "use client";
 
-import NewmorphicLink from "@/shared/ui/Neumorphic/link";
+import ALink from "@/shared/ui/Neumorphic/link";
 
-export default function menu() {
+export default function Menu() {
 	return (
-		<div className="flex gap-5">
-			<NewmorphicLink href="/lunch">
+		<div className="flex flex-wrap gap-5 justify-center">
+			<ALink href="/lunch" className="w-24 h-24">
 				🍴
-			</NewmorphicLink>
-			<NewmorphicLink href="/kebo">
+			</ALink>
+			<ALink href="/kebo" className="w-24 h-24">
 				⌨️
-			</NewmorphicLink>
+			</ALink>
 		</div>
 	);
 }
