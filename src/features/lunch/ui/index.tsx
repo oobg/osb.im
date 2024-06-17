@@ -6,13 +6,12 @@ import LunchList from "./list";
 
 export default function Lunch() {
 	const [item, setItem] = useState<string>("");
-	const selectedItem = (item: string) => {
-		setItem(item);
-	}
+	const selectedItem = (item: string) => setItem(item);
+	const resetItem = () => setItem("");
 	return (
 		<>
 			<LunchMenu emits={selectedItem} />
-			<LunchList item={item} />
+			<LunchList item={item} onResetItem={resetItem} />
 		</>
 	)
 }

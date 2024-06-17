@@ -1,21 +1,33 @@
 "use client";
 
+import { useEffect, useState } from "react";
+import Input from "@/shared/ui/Neumorphic/input";
+
 interface ListProps {
 	item?: string;
+	onResetItem: () => void;
 }
 
-export default function List(item: ListProps) {
-	const list = lists.find((list) => list.name === item.item);
+export default function List({ item, onResetItem }: ListProps) {
+	const [randomItem, setRandomItem] = useState<string | undefined>("");
+
+	useEffect(() => {
+		const list = lists.find((list) => list.name === item);
+		if (list) {
+			const maxLength = list.list.length;
+			const random = Math.floor(Math.random() * maxLength);
+			setRandomItem(list.list[random]);
+			onResetItem();
+		}
+	}, [item]);
 
 	return (
 		<div className="flex flex-wrap gap-5 justify-center flex-col w-80">
-			{list?.list.map((item, index) => (
-				<div
-					key={index}
-					className="flex justify-center items-center w-80 h-12 rounded-lg animate-slide-in">
-					{item}
-				</div>
-			))}
+			<Input
+				className="text-center h-10"
+				value={randomItem || ""}
+				readOnly={true}
+			/>
 		</div>
 	);
 }
