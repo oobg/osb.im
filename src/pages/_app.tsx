@@ -1,8 +1,14 @@
-import '../app/globals.css';
-import type { AppProps } from 'next/app';
+import type { AppProps } from "next/app";
+import "@/app/globals.css";
+import { HomeButton } from "@/features/header";
 
 function MyApp({ Component, pageProps }: AppProps) {
-	return <Component {...pageProps} />;
+	return (
+		<>
+			<HomeButton />
+			<Component {...pageProps} />
+		</>
+	);
 }
 
 export default MyApp;
