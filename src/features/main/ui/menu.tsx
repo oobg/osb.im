@@ -8,9 +8,9 @@ export default function Menu() {
 			<ALink href="/lunch" className="w-24 h-24">
 				🍴
 			</ALink>
-			{/*<ALink href="/kebo" className="w-24 h-24">*/}
-			{/*	⌨️*/}
-			{/*</ALink>*/}
+			<ALink href="/search/icon" className="w-24 h-24">
+				🖼️
+			</ALink>
 		</div>
 	);
 }
