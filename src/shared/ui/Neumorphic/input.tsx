@@ -4,7 +4,7 @@ interface NewmorphicInputProps {
 	type?: string,
 	placeholder?: string,
 	className?: string,
-	value: string,
+	value?: string | undefined,
 	onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void,
 	onKeyPress?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
 	readOnly?: boolean,
