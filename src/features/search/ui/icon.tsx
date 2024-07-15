@@ -17,7 +17,7 @@ export default function SearchIcon() {
 	}, [query]);
 
 	const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => setQuery(e.target.value);
-	const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => e.key === "Enter" && search();
+	const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => e.key === "Enter" && search();
 
 	return (
 		<div className="flex flex-wrap flex-col gap-10 justify-center items-center w-80">
@@ -34,7 +34,7 @@ export default function SearchIcon() {
 					placeholder="이미지 검색"
 					value={query}
 					onChange={handleInputChange}
-					onKeyPress={handleKeyPress}
+					onKeyDown={handleKeyDown}
 				/>
 				<Button onClick={search}>🔍</Button>
 			</div>

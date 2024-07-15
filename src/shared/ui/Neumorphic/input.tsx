@@ -6,12 +6,13 @@ interface NewmorphicInputProps {
 	className?: string,
 	value?: string | undefined,
 	onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void,
-	onKeyPress?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
+	onKeyDown?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
 	readOnly?: boolean,
+	checked?: boolean;
 }
 
 export default function Input({
-	type = "text", placeholder = "", className = "", value, onChange, onKeyPress, readOnly = false,
+	type = "text", placeholder = "", className = "", value, onChange, onKeyDown, readOnly = false, checked
 }: Readonly<NewmorphicInputProps>) {
 	const combinedClassName = `neumorphic ${className}`.trim();
 	return (
@@ -21,8 +22,9 @@ export default function Input({
 			className={combinedClassName}
 			value={value}
 			onChange={onChange}
-			onKeyPress={onKeyPress}
+			onKeyDown={onKeyDown}
 			readOnly={readOnly}
+			checked={checked}
 		/>
 	);
 }
