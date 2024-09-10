@@ -2,8 +2,8 @@ version: '3.8'
 
 services:
   web:
-    container_name: osb.im
-    image: osb.im:1.${BUILD_NUMBER}
+    container_name: ${JOB_NAME}
+    image: ${JOB_NAME}:1.${BUILD_NUMBER}
     restart: always
     expose:
       - 80
