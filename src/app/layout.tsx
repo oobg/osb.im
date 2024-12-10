@@ -21,8 +21,10 @@ export default function RootLayout({
   return (
     <html lang="kr">
       <body className={inter.className}>
-        <HomeButton />
-        {children}
+        <HomeButton/>
+        <main className="flex min-h-screen flex-col items-center justify-center gap-5">
+          {children}
+        </main>
       </body>
     </html>
   );
