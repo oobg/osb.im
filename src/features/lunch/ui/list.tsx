@@ -11,12 +11,24 @@ interface ListProps {
 export default function List({ item, onResetItem }: ListProps) {
 	const [randomItem, setRandomItem] = useState<string | undefined>("");
 
+	const getRandomItem = (list: string[], currentItem: string | undefined): string => {
+		if (list.length <= 1) return list[0];
+
+		const maxLength = list.length;
+		const random = Math.floor(Math.random() * maxLength);
+		const temp = list[random];
+
+		if (temp === currentItem) {
+			return getRandomItem(list, currentItem);
+		}
+		return temp;
+	};
+
 	useEffect(() => {
 		const list = lists.find((list) => list.name === item);
 		if (list) {
-			const maxLength = list.list.length;
-			const random = Math.floor(Math.random() * maxLength);
-			setRandomItem(list.list[random]);
+			const newRandomItem = getRandomItem(list.list, randomItem);
+			setRandomItem(newRandomItem);
 			onResetItem();
 		}
 	}, [item]);
